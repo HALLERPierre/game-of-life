@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-e71d53e2.js",
+    "file": "start-9aff492b.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -32,7 +32,7 @@
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-ac6fffb2.js",
+    "file": "pages/index.svelte-5fc936cf.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -41,7 +41,7 @@
       "_singletons-a6a7384f.js"
     ],
     "css": [
-      "assets/pages/index.svelte-c8e51fa7.css"
+      "assets/pages/index.svelte-e7dc2694.css"
     ],
     "assets": [
       "assets/roboto-cyrillic-ext-400-normal-78f525ec.woff2",

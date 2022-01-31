@@ -6,13 +6,13 @@
 		<link rel="icon" href="/game-of-life/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta http-equiv="content-security-policy" content=""><title>Game of Life</title>
-	<link rel="stylesheet" href="/game-of-life/internal/assets/pages/index.svelte-c8e51fa7.css">
-	<link rel="modulepreload" href="/game-of-life/internal/start-e71d53e2.js">
+	<link rel="stylesheet" href="/game-of-life/internal/assets/pages/index.svelte-e7dc2694.css">
+	<link rel="modulepreload" href="/game-of-life/internal/start-9aff492b.js">
 	<link rel="modulepreload" href="/game-of-life/internal/chunks/vendor-7f937735.js">
 	<link rel="modulepreload" href="/game-of-life/internal/chunks/singletons-a6a7384f.js">
 	<link rel="modulepreload" href="/game-of-life/internal/layout.svelte-b3d78b89.js">
-	<link rel="modulepreload" href="/game-of-life/internal/pages/index.svelte-ac6fffb2.js"><script type="module">
-		import { start } from "/game-of-life/internal/start-e71d53e2.js";
+	<link rel="modulepreload" href="/game-of-life/internal/pages/index.svelte-5fc936cf.js"><script type="module">
+		import { start } from "/game-of-life/internal/start-9aff492b.js";
 		start({
 			target: document.querySelector("#svelte"),
 			paths: {"base":"/game-of-life","assets":"/game-of-life"},
@@ -25,7 +25,7 @@
 				error: null,
 				nodes: [
 					import("/game-of-life/internal/layout.svelte-b3d78b89.js"),
-						import("/game-of-life/internal/pages/index.svelte-ac6fffb2.js")
+						import("/game-of-life/internal/pages/index.svelte-5fc936cf.js")
 				],
 				url: new URL("http://sveltekit-prerender/game-of-life"),
 				params: {}
@@ -41,10 +41,12 @@
 
 
 
-<div class="grid svelte-n194fo"><div class="actions svelte-n194fo"><button class="reset svelte-n194fo">Clear</button>
-		<button class="start svelte-n194fo">Start</button>
-		<button class="start svelte-n194fo">Copy</button></div>
-	<svg width="100%" height="100%"><rect class="rect svelte-n194fo" x="0" y="0" width="48" height="48" rx="3.912023005428146" ry="3.912023005428146"></rect></svg>
+<div class="grid svelte-183mf6o"><div class="actions svelte-183mf6o"><button class="reset svelte-183mf6o">Clear</button>
+		<button class="start svelte-183mf6o">Start</button>
+		<button class="start svelte-183mf6o">Copy</button>
+		<div class="speed svelte-183mf6o"><button class="svelte-183mf6o">-</button>
+			<button class="svelte-183mf6o">+</button></div></div>
+	<svg width="100%" height="100%"><rect class="rect svelte-183mf6o" x="0" y="0" width="50" height="50" rx="3.912023005428146" ry="3.912023005428146"></rect></svg>
 </div>
 
 </div>
