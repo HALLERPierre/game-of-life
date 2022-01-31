@@ -1,10 +1,14 @@
 <script lang="ts">
 	import { spring } from 'svelte/motion';
 	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 
 	type CellIndex = `${number}:${number}`;
 
-	const urlPattern = $page.url.searchParams.get('pattern');
+	let urlPattern: string | undefined | null;
+	onMount(() => {
+		urlPattern = $page.url.searchParams.get('pattern');
+	});
 
 	let height: number = 0;
 	let width: number = 0;
@@ -22,7 +26,7 @@
 	$: smoothRectSize.set(rectSize);
 
 	$: {
-		if (urlPattern !== undefined) {
+		if (urlPattern !== undefined && urlPattern !== null) {
 			alivedCells = JSON.parse(decodeURI(urlPattern));
 		}
 	}
