@@ -14,7 +14,7 @@
 		font-family: 'Roboto';
 		width: 100vw;
 		height: 100vh;
-		background-color: #888888;
+		background-color: #4e615b;
 		margin: 0;
 	}
 	h1 {

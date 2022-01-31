@@ -1,6 +1,10 @@
 <script lang="ts">
 	import { spring } from 'svelte/motion';
+	import { page } from '$app/stores';
+
 	type CellIndex = `${number}:${number}`;
+
+	const urlPattern = $page.url.searchParams.get('pattern');
 
 	let height: number = 0;
 	let width: number = 0;
@@ -16,6 +20,12 @@
 
 	const smoothRectSize = spring(rectSize);
 	$: smoothRectSize.set(rectSize);
+
+	$: {
+		if (urlPattern !== undefined) {
+			alivedCells = JSON.parse(decodeURI(urlPattern));
+		}
+	}
 
 	function getNeighboors(coords: { x: number; y: number }) {
 		const neighboors: CellIndex[] = [];
@@ -91,8 +101,17 @@
 <svelte:window on:wheel={onScroll} />
 
 <div class="grid" bind:clientHeight={height} bind:clientWidth={width}>
-	<button class="reset" on:click={() => (alivedCells = [])}>Clear</button>
-	<button class="start" on:click={playing ? stop : play}>{playing ? 'Stop' : 'Start'}</button>
+	<div class="actions">
+		<button class="reset" on:click={() => (alivedCells = [])}>Clear</button>
+		<button class="start" on:click={playing ? stop : play}>{playing ? 'Stop' : 'Start'}</button>
+		<button
+			class="start"
+			on:click={() =>
+				navigator.clipboard.writeText(
+					`${window.location.origin}?pattern=${encodeURI(JSON.stringify(alivedCells))}`
+				)}>Copy</button
+		>
+	</div>
 	<svg width="100%" height="100%">
 		{#each Array(xRectsCounts) as _, x}
 			{#each Array(yRectsCounts) as _, y}
@@ -114,12 +133,26 @@
 		width: 100%;
 		height: 100%;
 	}
-	.reset {
+	.actions {
 		position: fixed;
+		bottom: 2%;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		gap: 2rem;
+		opacity: 0.1;
+		transition: opacity 0.4s;
 	}
-	.start {
-		position: fixed;
-		right: 0;
+	.actions:hover {
+		opacity: 1;
+	}
+	button {
+		text-transform: uppercase;
+		font-size: 2rem;
+		padding: 25px 40px;
+		background-color: green;
+		border: none;
+		cursor: pointer;
 	}
 	.rect {
 		pointer-events: all;
