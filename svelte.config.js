@@ -12,6 +12,10 @@ const config = {
 
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte'
+	},
+	paths: {
+		base: '/game-of-life',
+		assets: '/game-of-life'
 	}
 };
 
