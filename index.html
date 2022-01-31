@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="" />
+		<link rel="icon" href="./favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="content-security-policy" content=""><title>Game of Life</title>
+	<link rel="stylesheet" href="/_app/assets/pages/index.svelte-fbf88e0a.css">
+	<link rel="modulepreload" href="/_app/start-53d4663a.js">
+	<link rel="modulepreload" href="/_app/chunks/vendor-f5c9bb2d.js">
+	<link rel="modulepreload" href="/_app/layout.svelte-d36a1d53.js">
+	<link rel="modulepreload" href="/_app/pages/index.svelte-4d5e3260.js"><script type="module">
+		import { start } from "/_app/start-53d4663a.js";
+		start({
+			target: document.querySelector("#svelte"),
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [
+					import("/_app/layout.svelte-d36a1d53.js"),
+						import("/_app/pages/index.svelte-4d5e3260.js")
+				],
+				url: new URL("http://sveltekit-prerender/"),
+				params: {}
+			}
+		});
+	</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+
+
+
+
+<div class="grid svelte-6r1rvs"><button class="reset svelte-6r1rvs">Clear</button>
+	<button class="start svelte-6r1rvs">Start</button>
+	<svg width="100%" height="100%"><rect class="rect svelte-6r1rvs" x="0" y="0" width="48" height="48"></rect></svg>
+</div>
+
+</div>
+	</body>
+</html>
