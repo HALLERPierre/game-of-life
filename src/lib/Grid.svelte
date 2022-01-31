@@ -6,8 +6,10 @@
 	type CellIndex = `${number}:${number}`;
 
 	let urlPattern: string | undefined | null;
+	let urlZoom: string | undefined | null;
 	onMount(() => {
 		urlPattern = $page.url.searchParams.get('pattern');
+		urlZoom = $page.url.searchParams.get('zoom');
 	});
 
 	let height: number = 0;
@@ -28,6 +30,9 @@
 	$: {
 		if (urlPattern !== undefined && urlPattern !== null) {
 			alivedCells = JSON.parse(decodeURI(urlPattern));
+		}
+		if (urlZoom !== undefined && urlZoom !== null) {
+			rectSize = JSON.parse(decodeURI(urlZoom));
 		}
 	}
 
@@ -112,7 +117,9 @@
 			class="start"
 			on:click={() =>
 				navigator.clipboard.writeText(
-					`${window.location.origin}?pattern=${encodeURI(JSON.stringify(alivedCells))}`
+					`${window.location.origin}?pattern=${encodeURI(
+						JSON.stringify(alivedCells)
+					)}&zoom=${$smoothRectSize}`
 				)}>Copy</button
 		>
 	</div>
